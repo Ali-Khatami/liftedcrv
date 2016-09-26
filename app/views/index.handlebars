@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-md-12">
+        <button aria-controls="filtersContainer" aria-expanded="false" class="btn btn-primary" data-target="#filtersContainer" data-toggle="collapse"
+            type="button">
+            Filter Results
+        </button>
+        {{> crv-filters}}
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="row">
+            {{#each crvs}}
+              <div class="col-sm-6">
+                {{> car-block crv=this}}
+              </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+{{#contentFor "pageScripts"}}
+  <script>
+    $(function(){
+      console.log("dom ready!");
+    });
+  </script>
+{{/contentFor}}
